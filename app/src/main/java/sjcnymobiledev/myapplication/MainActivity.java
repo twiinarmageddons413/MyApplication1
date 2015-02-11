@@ -1,10 +1,13 @@
 package sjcnymobiledev.myapplication;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -12,11 +15,25 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //This is a test comment
 
-
-        
         setContentView(R.layout.activity_main);
+
+        final Button button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Success")
+                        .setMessage("Now it's time to add your own button!")
+                        .setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+            }
+        });
+
     }
 
 
