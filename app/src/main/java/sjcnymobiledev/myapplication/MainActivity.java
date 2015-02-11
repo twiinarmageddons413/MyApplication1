@@ -8,9 +8,13 @@ import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity {
 
+    //This is the class where you should set your event handlers for your click events
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        
         setContentView(R.layout.activity_main);
     }
 
