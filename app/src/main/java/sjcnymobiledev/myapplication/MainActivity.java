@@ -35,6 +35,23 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
+        final Button bBrendon = (Button) findViewById(R.id.Brendon);
+        bBrendon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Brendon Thomson-Nahoum
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("(Insert witty title here)")
+                        .setMessage("(Insert sarcastic statement here)")
+                        .setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+            }
+        });
+
     }
 
 
